@@ -1,0 +1,51 @@
+<!--<mat-chip-list aria-label="labels">
+  <mat-chip>Estados: </mat-chip>
+  <mat-chip class="chip1" selected>Abierto</mat-chip>
+  <mat-chip class="chip2" selected>En Proceso</mat-chip>
+  <mat-chip class="chip3" selected>Cerrado</mat-chip>
+</mat-chip-list> -->
+
+
+<div class="container">
+  <div  class="main-container">
+    <mat-chip-list aria-label="labels"></mat-chip-list>
+
+    <div class="grid-container">
+      <mat-chip class="chip1" selected>Abierto</mat-chip>
+      <div *ngFor="let note of open" class="column">
+        <mat-card *ngIf="note.state === 'abierto'" class="card open" (click)="editNote(note.id,note.state)">
+          <div>
+            <h3 class="title">{{note?.title}}</h3>
+            <p class="description">{{note.description}}</p>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="grid-container"> 
+      <mat-chip class="chip2" selected>En Proceso</mat-chip>
+      <div *ngFor="let note of inProgress" class="column">
+        <mat-card *ngIf="note.state === 'en proceso'" class="card inProgress" (click)="editNote(note.id,note.state)">
+          <div>
+            <h3 class="title">{{note.title}}</h3>
+            <p class="description">{{note.description}}</p>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="grid-container">
+      <mat-chip class="chip3" selected>Cerrado</mat-chip>
+      <div *ngFor="let note of closed" class="column">
+        <mat-card *ngIf="note.state === 'cerrado'" class="card closed" (click)="editNote(note.id,note.state)">
+          <div>
+            <h3 class="title">{{note.title}}</h3>
+            <p class="description">{{note.description}}</p>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+

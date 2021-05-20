@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  margin-bottom: 2em;
+  margin-top: 1.5em;
+  
+}
+.main-title {
+  text-align: center;
+  padding: 1em;
+  font-weight: 500;
+  position: relative;
+  font-family: Fjalla One;
+  
+}
+
+
+.main-title a {
+  text-decoration: none;
+  color: #fdfdfd;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+
+.main-title::after {
+	position: absolute;
+	content: "";
+	width: 0%;
+	height: 2px;
+	background-color: whitesmoke;
+	left: 50%;
+	bottom: 20px;
+	transition: all 0.4s ease-in-out;
+  
+}
+
+.container:hover .main-title::after {
+	width: 100%;
+	left: 0;
+  
+}
+
